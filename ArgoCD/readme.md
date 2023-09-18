@@ -7,7 +7,7 @@ ArgoCD has an **Application Controller**. This controller is a Kubernetes contro
 ArgoCD has an **API server**. It is reponsible for letting you interact with Argo CD via the CLI or web UI.<br/><br/>
 There are multiple ways to install ArgoCD: by using the manifest files, by using helm chars or by using an operator. Here, I will be using the manifest files to make the installation. 
 
-## ArgoCD Installation with manifest
+## ArgoCD Installation with manifest (part 1)
 * We first create a namespace 
 ```
 $ kubectl create ns argocd
@@ -22,5 +22,8 @@ Check and wait till all is running
 ```
 $ kubectl get pods -n argocd -w
 ```
+## Explaining the components
+I will just take a small moment here to explain the use of each pod that have been created.
+![ArgoCD_Pods](img/argo_components.png)
 ## References
 * [The Official ArgoCD docs](https://argo-cd.readthedocs.io/en/stable/)
