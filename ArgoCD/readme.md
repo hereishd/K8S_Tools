@@ -23,7 +23,14 @@ Check and wait till all is running
 $ kubectl get pods -n argocd -w
 ```
 ## Explaining the components
-I will just take a small moment here to explain the use of each pod that have been created.
-![ArgoCD_Pods](img/argo_components.png)
+I will just take a small moment here to explain the use for each pod that has been created.
+![ArgoCD_Pods](img/argo_components.png)<br/>
+
+* **argocd-application-controller-...**: Is basically used to generate and monitor the applications. *(we will go deeper in explaining applications further on)*
+* **argocd-dex-server-...**: Used for the SSO. In case you want to set OIDC or any Auth related configurations with your Identity provider.
+* **argocd-notification-controller-...**: This is a new feature. It continuously monitors ArgoCD applications and provide a way to notify users about important changes in the application state.
+* **argocd-redis-...**: Responsible of caching the states.
+* **argocd-repo-server-...**: Used to communicate with the version control system that we are using to store ou manifests. (ArgoCD only supports GIT based version control systems).
+* **argocd-server-...**: Basically, this is the API server of ArgoCD. It is reponsible for letting you interact with Argo CD via the CLI or web UI. (takes all the requests from the users).
 ## References
 * [The Official ArgoCD docs](https://argo-cd.readthedocs.io/en/stable/)
