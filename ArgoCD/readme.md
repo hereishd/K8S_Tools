@@ -26,7 +26,8 @@ $ kubectl get pods -n argocd -w
 I will just take a small moment here to explain the use for each pod that has been created.
 ![ArgoCD_Pods](img/argo_components.png)<br/>
 
-* **argocd-application-controller-...**: Is basically used to generate and monitor the applications. *(we will go deeper in explaining applications further on)*
+* **argocd-application-controller-0**: This is the core of ArgoCD. It continuously monitors applications, comparing the target state specified in the Git repository with the current state of our Cluster.
+* **argocd-applicationset-controller-...**: Is basically used to generate applications. *(we will go deeper in explaining applications in terms of ArgoCD further on)*
 * **argocd-dex-server-...**: Used for the SSO. In case you want to set OIDC or any Auth related configurations with your Identity provider.
 * **argocd-notification-controller-...**: This is a new feature. It continuously monitors ArgoCD applications and provide a way to notify users about important changes in the application state.
 * **argocd-redis-...**: Responsible of caching the states.
