@@ -28,3 +28,12 @@ We can now check our service to make sure it's type was successfully set to Node
 $ kubectl get svc -n argocd
 ```
 ![ArgoCD_Svc_Node](../img/argo_svc_node.png)<br/>
+We can now get the url to access our UI
+```
+$ minikube service argocd-server -n argocd --url
+```
+<br/>
+By accessing the url:port obtained, we are now on ArgoCD's UI login page. The user by default is ```admin```.<br/>
+To get you passworde, you will need to decode the ```argocd-initial-admin-secret``` password value.
+
+## Creating the first application
