@@ -9,8 +9,8 @@ There are multiple ways to install ArgoCD: by using the manifest files, by using
 
 ## ArgoCD Installation 
 For this part, I chose to make the documentation in 2 different parts. On for the sake of simplicity and understanding the concepts on minikube, and another one my cluster on virutalbox. Here are my links:
-* Installing ArgoCD on minikube and practice 
-* Installing and customizing ArgoCD on my VirtualBox VM Cluster
+* [Installing ArgoCD on minikube and practice](https://github.com/hereishd/K8S_Tools/tree/main/ArgoCD/with_minikube) 
+* [Installing and customizing ArgoCD on my VirtualBox VM Cluster](https://github.com/hereishd/K8S_Tools/tree/main/ArgoCD/with_virtualbox)
 
 ## Explaining the components
 I will just take a small moment here to explain the use for each pod that has been created.
