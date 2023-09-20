@@ -19,4 +19,12 @@ When all our pods are running it is now time to check our services.
 $ kubectl get svc -n argocd
 ```
 ![ArgoCD_Svcs](../img/argo_svc_cluster.png)<br/>
-As we can see, our ```argocd-server``` is of type ClusterIP. We nee to edit it to set it's type to NodePort in order for us to be able to access the UI panel.
+As we can see, our ```argocd-server``` is of type ClusterIP. We nee to edit it to set it's ```type:``` to ```NodePort``` in order for us to be able to access the UI panel.
+```
+$ kubectl edit svc argocd-server -n argocd
+```
+We can now check our service to make sure it's type was successfully set to NodePort.
+```
+$ kubectl get svc -n argocd
+```
+![ArgoCD_Svc_Node](../img/argo_svc_node.png)<br/>
