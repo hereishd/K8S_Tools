@@ -34,7 +34,8 @@ $ minikube service argocd-server -n argocd --url
 ```
 <br/>
 
-By accessing the url:port obtained, we are now on ArgoCD's UI login page. The user by default is ```admin```.<br/>
-To get you passworde, you will need to decode the ```argocd-initial-admin-secret``` password value.
+By accessing the url:port obtained, we are now on ArgoCD's UI login page.<br/>
+The user by default is ```admin```.<br/>
+To get you password, you will need to decode the ```argocd-initial-admin-secret``` password value.
 
 ## Creating the first application
