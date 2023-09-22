@@ -35,7 +35,13 @@ Let's say you want to check your apps with the CLI, after installing it use this
 ```
 $ argocd app list
 ```
-You will obtain this error ```FATA[0000] Argo CD server address unspecified```. This is because our CLI is not setup to communicate with our ArgoCD server.<br/>
+You will obtain this error ```FATA[0000] Argo CD server address unspecified```. This is because our CLI is not setup to communicate with our ArgoCD server. We will need to do the same steps than for the UI but for the CLI.<br/>
+First we login
+```
+$ argocd login <URL:PORT>
+```
+*Here, enter the URL:PORT of your argocd server service to which you want to connect.*<br/>
+You will then get prompt to enter your login&password creds. Put the same as you would of used for the UI.<br/><br/>
 For more info on the CLI commands, you can refer to [the official documentation](https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/).
 
 ## Creating an application from the CLI
