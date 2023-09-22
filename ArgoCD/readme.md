@@ -26,6 +26,9 @@ I will just take a small moment here to explain the use for each pod that will b
 * **argocd-server-...** : Basically, this is the API server of ArgoCD. It is reponsible for letting you interact with Argo CD via the CLI or web UI. (takes all the requests from the users).
 
 ## Creating an application from the UI
+It is now time to try careting our fisrt app with ArgoCD.<br/>
+For this, ArgoCD itself maintains repositorys with example apps to allow us to practice with ArgoCD. Here is the url: [https://github.com/argoproj/argocd-example-apps](https://github.com/argoproj/argocd-example-apps).<br/>
+I will use the guestbook app to start off with. In this repo there is a simple deployment yaml and service yaml.
 
 ## Install & Setup ArgoCD CLI
 * Install the CLI:<br/>
@@ -51,11 +54,16 @@ $ argocd app list
 For more info on the CLI commands, you can refer to [the official documentation](https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/).
 
 ## Creating an application from the CLI
+Same as for creating an application from the UI, here I will make use of [the repository from the argoproj](https://github.com/argoproj/argocd-example-apps) to create my application.<br/>
 
-## Practical example
-It is now time to try ArgoCD.<br/>
-For this, ArgoCD itself maintains repositorys with example apps to allow us to practice with ArgoCD. Here is the url: [https://github.com/argoproj/argocd-example-apps](https://github.com/argoproj/argocd-example-apps).<br/>
-I will use the guestbook app to start off with. In this repo there is a simple deployment yaml and service yaml
+Here we will make use of the ```argocd app create``` with the options.
+```
+$  argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --directory-recurse  
+```
+The guestbook application will be created. It is out of sync at time of creation because we forgot to add the sync policy as a flag and set it to auto.<br/>
+
+For this, delete the application and redo the same command adding ```--sync-policy auto``` at the end.
+
 ## Ingress Configuration
 Since I am using the NGINX Ingress Controller in my cluster, I will configure it with ArgoCD
 ## References
