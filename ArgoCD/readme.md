@@ -40,8 +40,13 @@ First we login
 ```
 $ argocd login <URL:PORT>
 ```
-*Here, enter the URL:PORT of your argocd server service to which you want to connect.*<br/>
-You will then get prompt to enter your login&password creds. Put the same as you would of used for the UI.<br/><br/>
+*Here, enter the URL:PORT of your argocd server service to which you want to connect.*<br/><br/>
+You will then get prompt to enter your login&password creds. Put the same as you would of used for the UI.<br/>
+You can now check all is successfull by querying the argocd server again
+```
+$ argocd app list
+```
+<br/>
 For more info on the CLI commands, you can refer to [the official documentation](https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/).
 
 ## Creating an application from the CLI
