@@ -25,8 +25,20 @@ I will just take a small moment here to explain the use for each pod that will b
 * **argocd-repo-server-...**: Used to communicate with the version control system that we are using to store ou manifests. (ArgoCD only supports GIT based version control systems).
 * **argocd-server-...**: Basically, this is the API server of ArgoCD. It is reponsible for letting you interact with Argo CD via the CLI or web UI. (takes all the requests from the users).
 
-## Install ArgoCD CLI
-The instruction to install the ArgoCD CLI can be found on in [the ArgoCD official documentation](https://argo-cd.readthedocs.io/en/stable/cli_installation/). Choose the option that suits you depending on you OS.
+## Creating an application from the UI
+
+## Install & Setup ArgoCD CLI
+* Install the CLI:<br/>
+The instruction to install the ArgoCD CLI can be found on in [the ArgoCD official documentation](https://argo-cd.readthedocs.io/en/stable/cli_installation/). Choose the option that suits you depending on you OS.<br/></br>
+* Setup the CLI:<br/>
+Let's say you want to check your apps with the CLI, after installing it use this command
+```
+$ argocd app list
+```
+You will obtain this error ```FATA[0000] Argo CD server address unspecified```. This is because our CLI is not setup to communicate with our ArgoCD server.<br/>
+For more info on the CLI commands, you can refer to [the official documentation](https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/).
+
+## Creating an application from the CLI
 
 ## Practical example
 It is now time to try ArgoCD.<br/>
